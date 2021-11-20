@@ -3,8 +3,8 @@ package alcatel
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/alcatel-link-zone/internal/alcatel/request"
-	"github.com/alcatel-link-zone/internal/alcatel/response"
+	"github.com/alcatel-link-zone/internal/alcatel/request_and_response/request"
+	"github.com/alcatel-link-zone/internal/alcatel/request_and_response/response"
 	"net/http"
 )
 

@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31902292-45a4-4991-b9e0-e36b3d065498" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go_build_github_com_alcatel_link_zone" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/go_build_github_com_alcatel_link_zone_cmd_main" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/main/build" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/alcatel/alcatel_link.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/alcatel_link.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/alcatel/request/login_request.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/request_and_response/request/login_request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/alcatel/request_base.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/request_and_response/request_base.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/alcatel/response/login_response.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/request_and_response/response/login_response.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +49,7 @@
       <recent name="$PROJECT_DIR$/test" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Test.TestLoginCorrectPassowrd in github.com/alcatel-link-zone/test">
     <configuration name="go build github.com/alcatel-link-zone/cmd/main" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
       <module name="alcatel-link-zone-recharge" />
       <working_directory value="$PROJECT_DIR$" />
@@ -60,6 +61,26 @@
       <output_directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestLoginCorrectPassowrd in github.com/alcatel-link-zone/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="alcatel-link-zone-recharge" />
+      <working_directory value="$PROJECT_DIR$/test" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/alcatel-link-zone/test" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestLoginCorrectPassowrd\E$" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Go Build.go build github.com/alcatel-link-zone/cmd/main" />
+      <item itemvalue="Go Test.TestLoginCorrectPassowrd in github.com/alcatel-link-zone/test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.TestLoginCorrectPassowrd in github.com/alcatel-link-zone/test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">

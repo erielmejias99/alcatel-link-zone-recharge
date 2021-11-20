@@ -1,23 +1,25 @@
 package request
 
-import "github.com/alcatel-link-zone/internal/alcatel"
+import (
+	"github.com/alcatel-link-zone/internal/alcatel/request_and_response"
+)
 
 type LoginRequestParam struct{
-	username string `json:"UserName"`
-	password string `json:"Password"`
+	Username string `json:"UserName"`
+	Password string `json:"Password"`
 }
 
 
 type LoginRequest struct{
 	Params LoginRequestParam `json:"params"`
-	alcatel.Request
+	request_and_response.Request
 }
 
 func NewLoginRequest( username string, password string ) *LoginRequest {
 	request := &LoginRequest{
 		Params: LoginRequestParam{
-			username: username,
-			password: password,
+			Username: username,
+			Password: password,
 		},
 	}
 	request.Method = "Login"

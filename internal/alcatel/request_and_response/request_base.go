@@ -1,4 +1,4 @@
-package alcatel
+package request_and_response
 
 type Request struct {
 	JsonRPC string `json:"jsonrpc"`
