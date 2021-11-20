@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="31902292-45a4-4991-b9e0-e36b3d065498" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/main/build" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/alcatel/alcatel_link.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/alcatel_link.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/alcatel/request/login_request.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/request_and_response/request/login_request.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/alcatel/request_base.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/request_and_response/request_base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/alcatel/response/login_response.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/request_and_response/response/login_response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/alcatel/request_and_response/request_base.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/request_and_response/base.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/alcatel/request_and_response/response/login_response.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/request_and_response/response/login_response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/login_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/login_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +45,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/internal/alcatel/request_and_response" />
       <recent name="$PROJECT_DIR$/test" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestLoginCorrectPassowrd in github.com/alcatel-link-zone/test">
+  <component name="RunManager" selected="Go Test.go test github.com/alcatel-link-zone/test">
     <configuration name="go build github.com/alcatel-link-zone/cmd/main" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
       <module name="alcatel-link-zone-recharge" />
       <working_directory value="$PROJECT_DIR$" />
@@ -72,12 +72,37 @@
       <pattern value="^\QTestLoginCorrectPassowrd\E$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestLoginInvalidPassowrd in github.com/alcatel-link-zone/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="alcatel-link-zone-recharge" />
+      <working_directory value="$PROJECT_DIR$/test" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/alcatel-link-zone/test" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestLoginInvalidPassowrd\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go test github.com/alcatel-link-zone/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="alcatel-link-zone-recharge" />
+      <working_directory value="$PROJECT_DIR$/test" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/alcatel-link-zone/test" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Go Build.go build github.com/alcatel-link-zone/cmd/main" />
       <item itemvalue="Go Test.TestLoginCorrectPassowrd in github.com/alcatel-link-zone/test" />
+      <item itemvalue="Go Test.TestLoginInvalidPassowrd in github.com/alcatel-link-zone/test" />
+      <item itemvalue="Go Test.go test github.com/alcatel-link-zone/test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.go test github.com/alcatel-link-zone/test" />
+        <item itemvalue="Go Test.TestLoginInvalidPassowrd in github.com/alcatel-link-zone/test" />
         <item itemvalue="Go Test.TestLoginCorrectPassowrd in github.com/alcatel-link-zone/test" />
       </list>
     </recent_temporary>
@@ -96,6 +121,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -104,9 +130,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/test/login_test.go</url>
+          <line>23</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/internal/alcatel/alcatel_link.go</url>
-          <line>15</line>
-          <option name="timeStamp" value="1" />
+          <line>21</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
