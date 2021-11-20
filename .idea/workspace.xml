@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31902292-45a4-4991-b9e0-e36b3d065498" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/internal/alcatel/alcatel_link.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/alcatel/consts.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/alcatel/request/login_request.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/alcatel/request_base.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/alcatel/response/login_response.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/login_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_build_github_com_alcatel_link_zone" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_build_github_com_alcatel_link_zone_cmd_main" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +41,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cmd/main" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
