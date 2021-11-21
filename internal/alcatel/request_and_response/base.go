@@ -8,6 +8,15 @@ type Request struct {
 	Id      string `json:"id"`
 }
 
+func NewRequest( jsonRPC, method, id string ) *Request{
+	return &Request{
+		JsonRPC: jsonRPC,
+		Method: method,
+		Id: id,
+	}
+}
+
+
 type Error struct {
 	Code    string `json:"code"`
 	Message string `json:"message"`
