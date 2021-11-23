@@ -31,3 +31,11 @@ type Response struct {
 	Id      string `json:"id"`
 	Err     *Error `json:"error"`
 }
+
+func (r Response) IsOk() bool {
+	return r.Err == nil
+}
+
+func (r Request) GetUrl(base string) string {
+	return fmt.Sprintf( "%s?api=%s", base, r.Method )
+}
