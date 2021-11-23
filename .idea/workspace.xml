@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31902292-45a4-4991-b9e0-e36b3d065498" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/internal/alcatel/request_and_response/response/login_state_response.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/alcatel/ussd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/alcatel/login.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/alcatel/request_and_response/response/get_system_status.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/alcatel/system.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/alcatel_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/get_system_status_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/main/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/alcatel/alcatel_link.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/alcatel_link.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/alcatel/consts.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/consts.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/alcatel/request_and_response/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/request_and_response/base.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/alcatel/ussd.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/ussd.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/login_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/login_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/send_ussd_code_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/send_ussd_code_test.go" afterDir="false" />
     </list>
@@ -55,7 +59,7 @@
       <recent name="$PROJECT_DIR$/test" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestSendUssdCode in github.com/alcatel-link-zone/test">
+  <component name="RunManager" selected="Go Test.TestAlcatelSendUssd in github.com/alcatel-link-zone/test">
     <configuration name="go build github.com/alcatel-link-zone/cmd/main" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
       <module name="alcatel-link-zone-recharge" />
       <working_directory value="$PROJECT_DIR$" />
@@ -67,7 +71,7 @@
       <output_directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestGetLoginStateLoggedIn in github.com/alcatel-link-zone/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAlcatelSendUssd in github.com/alcatel-link-zone/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="alcatel-link-zone-recharge" />
       <working_directory value="$PROJECT_DIR$/test" />
       <framework value="gotest" />
@@ -75,7 +79,7 @@
       <package value="github.com/alcatel-link-zone/test" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestGetLoginStateLoggedIn\E$" />
+      <pattern value="^\QTestAlcatelSendUssd\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestGetLoginStateLoggedOut in github.com/alcatel-link-zone/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -89,7 +93,7 @@
       <pattern value="^\QTestGetLoginStateLoggedOut\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestLogout in github.com/alcatel-link-zone/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestGetSystemStatus in github.com/alcatel-link-zone/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="alcatel-link-zone-recharge" />
       <working_directory value="$PROJECT_DIR$/test" />
       <framework value="gotest" />
@@ -97,7 +101,7 @@
       <package value="github.com/alcatel-link-zone/test" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestLogout\E$" />
+      <pattern value="^\QTestGetSystemStatus\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestSendUssdCode in github.com/alcatel-link-zone/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -125,17 +129,17 @@
       <item itemvalue="Go Build.go build github.com/alcatel-link-zone/cmd/main" />
       <item itemvalue="Go Test.go test github.com/alcatel-link-zone/test" />
       <item itemvalue="Go Test.TestGetLoginStateLoggedOut in github.com/alcatel-link-zone/test" />
-      <item itemvalue="Go Test.TestGetLoginStateLoggedIn in github.com/alcatel-link-zone/test" />
-      <item itemvalue="Go Test.TestLogout in github.com/alcatel-link-zone/test" />
       <item itemvalue="Go Test.TestSendUssdCode in github.com/alcatel-link-zone/test" />
+      <item itemvalue="Go Test.TestGetSystemStatus in github.com/alcatel-link-zone/test" />
+      <item itemvalue="Go Test.TestAlcatelSendUssd in github.com/alcatel-link-zone/test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestSendUssdCode in github.com/alcatel-link-zone/test" />
-        <item itemvalue="Go Test.TestLogout in github.com/alcatel-link-zone/test" />
-        <item itemvalue="Go Test.TestGetLoginStateLoggedOut in github.com/alcatel-link-zone/test" />
+        <item itemvalue="Go Test.TestAlcatelSendUssd in github.com/alcatel-link-zone/test" />
+        <item itemvalue="Go Test.TestGetSystemStatus in github.com/alcatel-link-zone/test" />
         <item itemvalue="Go Test.go test github.com/alcatel-link-zone/test" />
-        <item itemvalue="Go Test.TestGetLoginStateLoggedIn in github.com/alcatel-link-zone/test" />
+        <item itemvalue="Go Test.TestGetLoginStateLoggedOut in github.com/alcatel-link-zone/test" />
+        <item itemvalue="Go Test.TestSendUssdCode in github.com/alcatel-link-zone/test" />
       </list>
     </recent_temporary>
   </component>
@@ -167,29 +171,13 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/internal/alcatel/alcatel_link.go</url>
-          <line>140</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/internal/alcatel/alcatel_link.go</url>
-          <line>154</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/internal/alcatel/alcatel_link.go</url>
-          <line>173</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/test/login_test.go</url>
-          <line>37</line>
+          <line>41</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/internal/alcatel/alcatel_link.go</url>
-          <line>206</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/test/login_test.go</url>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

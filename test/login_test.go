@@ -10,8 +10,8 @@ import (
 
 func TestLoginCorrectPassowrd(t *testing.T) {
 
-	alcatelClient := alcatel.Alcatel{}
-	loginResponse, err := alcatelClient.Login("admin")
+	login := alcatel.Login{}
+	loginResponse, err := login.Login("admin")
 	if( err != nil ){
 		t.Errorf( "Error login %s", err.Error() )
 	}else{
@@ -22,8 +22,8 @@ func TestLoginCorrectPassowrd(t *testing.T) {
 
 func TestLoginInvalidPassowrd(t *testing.T) {
 
-	alcatelClient := alcatel.Alcatel{}
-	loginResponse, err := alcatelClient.Login("asdfasdfcaeggfsdf")
+	login := alcatel.Login{}
+	loginResponse, err := login.Login("asdfasdfcaeggfsdf")
 	if _, ok := err.(*request_and_response.Error); ok {
 		log.Printf( "Wrong Password OK: %s", err )
 	}else if err != nil {
@@ -34,8 +34,12 @@ func TestLoginInvalidPassowrd(t *testing.T) {
 }
 
 func TestGetLoginStateLoggedOut(t *testing.T) {
-	alcatelClient := &alcatel.Alcatel{}
-	loginState,err := alcatelClient.GetLoginState()
+	login := &alcatel.Login{}
+	_, err := login.Logout()
+	if err != nil {
+		t.Errorf("%s", err.Error() )
+	}
+	loginState,err := login.GetLoginState()
 	if err != nil {
 		t.Errorf( "%#v", loginState )
 	}
@@ -46,15 +50,15 @@ func TestGetLoginStateLoggedOut(t *testing.T) {
 }
 
 func TestGetLoginStateLoggedIn(t *testing.T) {
-	alcatelClient := &alcatel.Alcatel{}
+	login := &alcatel.Login{}
 
-	login, err := alcatelClient.Login("admin" )
+	loginResp, err := login.Login("admin" )
 	if err != nil {
 		t.Error(err)
 	}
-	t.Logf("%#v", login )
+	t.Logf("%#v", loginResp )
 
-	loginState,err := alcatelClient.GetLoginState()
+	loginState,err := login.GetLoginState()
 	if err != nil {
 		t.Errorf( "%#v", loginState )
 	}
@@ -67,7 +71,7 @@ func TestGetLoginStateLoggedIn(t *testing.T) {
 }
 
 func TestLogout(t *testing.T) {
-	a := alcatel.Alcatel{}
+	a := alcatel.Login{}
 
 	_, err := a.Login("admin")
 	if err != nil {
