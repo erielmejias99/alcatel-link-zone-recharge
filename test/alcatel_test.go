@@ -7,6 +7,10 @@ import (
 
 func TestAlcatelSendUssd(t *testing.T) {
 	a := alcatel.NewAlcatel()
-	content := a.SendUssd("*222#" )
-	t.Log( content )
+	content, err  := a.SendUssd("*222#" )
+	if err != nil {
+		t.Log( err )
+	}else{
+		t.Log( content )
+	}
 }

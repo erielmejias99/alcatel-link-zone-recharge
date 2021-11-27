@@ -12,6 +12,7 @@ import (
 
 type Ussd struct {
 	ussdType int
+	ussdRunning bool
 }
 
 
@@ -41,6 +42,7 @@ func (u Ussd) getUssdResponse() ( *response.UssdSentResponse, error ) {
 	if getUssdSentResponse.Err != nil {
 		return nil, getUssdSentResponse.Err
 	}
+	u.ussdRunning = true
 	return getUssdSentResponse, nil
 }
 
@@ -73,7 +75,7 @@ func (u Ussd) SetUssdEnd() error {
 	if !setUssdEndResponse.IsOk(){
 		return setUssdEndResponse.Err
 	}
-	u.ussdType = 1
+	u.ussdType = 0
 	return nil
 }
 
@@ -104,6 +106,5 @@ func (u Ussd) sendUSSD(code string ) ( *response.SendUssdResponse, error ) {
 	if !ussdResponse.IsOk() {
 		return nil, ussdResponse.Err
 	}
-
 	return ussdResponse, nil
 }

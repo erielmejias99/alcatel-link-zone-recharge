@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31902292-45a4-4991-b9e0-e36b3d065498" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/internal/alcatel/login.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/alcatel/request_and_response/response/get_system_status.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/alcatel/system.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/alcatel_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/get_system_status_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/alcatel/connection.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/alcatel/connection_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/alcatel/request_and_response/request/set_network_settings.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/alcatel/request_and_response/response/get_connection_status.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/main/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/alcatel/alcatel_link.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/alcatel_link.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/alcatel/consts.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/consts.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/alcatel/ussd.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/alcatel/ussd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/login_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/login_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/send_ussd_code_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/send_ussd_code_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/alcatel_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/alcatel_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +51,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/internal/alcatel" />
       <recent name="$PROJECT_DIR$/internal/alcatel/request_and_response" />
       <recent name="$PROJECT_DIR$/test" />
     </key>
