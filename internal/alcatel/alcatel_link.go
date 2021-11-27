@@ -51,8 +51,13 @@ func (a *Alcatel) SendUssd(code string) (resp string, err error) {
 				//try to reconnect
 				return "", errors.New("error changing the network")
 			}
+			a.networkChanged = true
+		}else{
+			_,err := a.connection.connect()
+			if err != nil {
+				return "",err
+			}
 		}
-		a.networkChanged = true
 	}
 
 	// Send code to the Network
@@ -84,18 +89,22 @@ func (a *Alcatel) SendUssd(code string) (resp string, err error) {
 
 func (a *Alcatel) CancelUssd() ( cancelled bool, err error ) {
 
-	//if the network changed while running ussd code, put it back
-	changed, err := a.changeNetwork( request.Net4G )
-	if err != nil {
-		return false, err
-	}
-	if !changed {
-		return false, errors.New( "error setting back the network, ending ussd request")
-	}
 	err = a.ussd.SetUssdEnd()
 	if err != nil {
 		return false, err
 	}
+
+	//if the network changed while running ussd code, put it back
+	if a.networkChanged {
+		changed, err := a.changeNetwork( request.Net4G )
+		if err != nil {
+			return false, err
+		}
+		if !changed {
+			return false, errors.New( "error setting back the network, ending ussd request")
+		}
+	}
+
 	return true, nil
 }
 
@@ -118,5 +127,5 @@ func (a *Alcatel) changeNetwork( networkType request.SetNetworkType ) ( changed 
 	if !connected {
 		return true, err
 	}
-	return
+	return true, nil
 }
