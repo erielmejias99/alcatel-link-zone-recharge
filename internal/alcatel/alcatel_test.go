@@ -16,6 +16,30 @@ func TestSendCode(t *testing.T) {
 	}
 }
 
+func TestSend2DiffUssdCode(t *testing.T) {
+	a := NewAlcatel()
+	resp, err := a.SendUssd("*133#" )
+	if err != nil {
+		t.Error(err)
+	}else{
+		t.Log(resp)
+		_, err := a.CancelUssd()
+		if err != nil {
+			t.Error("Error cancelling the ussdRequest")
+		}
+
+		resp2, err := a.SendUssd( "*222#" )
+		if err != nil {
+			t.Error(err)
+		}
+		t.Log(resp2)
+
+		if resp == resp2{
+			t.Error("Responses must be different")
+		}
+	}
+}
+
 func TestResponseRequiredUssd(t *testing.T) {
 	a := NewAlcatel()
 	resp, err := a.SendUssd("*133#" )
@@ -23,16 +47,18 @@ func TestResponseRequiredUssd(t *testing.T) {
 		t.Error(err)
 	}else{
 		t.Log(resp)
-		//_, err := a.CancelUssd()
-		//if err != nil {
-		//	t.Error("Error cancelling the ussdRequest")
-		//}
 
-		resp2, err := a.SendUssd( "5" )
+		resp2, err := a.SendUssd( "2" )
 		if err != nil {
 			t.Error(err)
 		}
-		t.Log(resp)
+
+		_, err = a.CancelUssd()
+		if err != nil {
+			t.Error("Error cancelling the ussdRequest")
+		}
+
+		t.Log(resp2)
 
 		if resp == resp2{
 			t.Error("Responses must be different")

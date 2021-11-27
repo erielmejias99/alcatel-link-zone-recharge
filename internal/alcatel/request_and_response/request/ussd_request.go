@@ -6,6 +6,7 @@ type UssdTypes int
 
 const (
 	Default UssdTypes = 1
+	Idk UssdTypes = 2
 )
 
 type SendUssdRequestParam struct {

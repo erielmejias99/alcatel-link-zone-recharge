@@ -16,7 +16,7 @@ type Ussd struct {
 }
 
 
-func (u Ussd) getUssdResponse() ( *response.UssdSentResponse, error ) {
+func (u *Ussd) getUssdResponse() ( *response.UssdSentResponse, error ) {
 
 	requestBytes, err := json.Marshal( request.GetUssdSentRequest )
 	if err != nil {
@@ -42,11 +42,12 @@ func (u Ussd) getUssdResponse() ( *response.UssdSentResponse, error ) {
 	if getUssdSentResponse.Err != nil {
 		return nil, getUssdSentResponse.Err
 	}
+	u.ussdType = getUssdSentResponse.Result.UssdType
 	u.ussdRunning = true
 	return getUssdSentResponse, nil
 }
 
-func (u Ussd) SetUssdEnd() error {
+func (u *Ussd) SetUssdEnd() error {
 	r := request_and_response.Request{
 		JsonRPC: "2.0",
 		Method: "SetUSSDEnd",
@@ -75,11 +76,11 @@ func (u Ussd) SetUssdEnd() error {
 	if !setUssdEndResponse.IsOk(){
 		return setUssdEndResponse.Err
 	}
-	u.ussdType = 0
+	u.ussdType = 1
 	return nil
 }
 
-func (u Ussd) sendUSSD(code string ) ( *response.SendUssdResponse, error ) {
+func (u *Ussd) sendUSSD(code string ) ( *response.SendUssdResponse, error ) {
 
 	requestStruct := request.NewSendUssdRequest( code, request.UssdTypes(u.ussdType) )
 	requestBytes, err := json.Marshal( requestStruct )

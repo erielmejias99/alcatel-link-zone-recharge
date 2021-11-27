@@ -3,7 +3,6 @@ package alcatel
 import (
 	"errors"
 	"fmt"
-	"github.com/alcatel-link-zone/internal/alcatel/request_and_response/request"
 	"github.com/alcatel-link-zone/internal/alcatel/request_and_response/response"
 	"time"
 )
@@ -26,38 +25,13 @@ func NewAlcatel() *Alcatel {
 func (a *Alcatel) SendUssd(code string) (resp string, err error) {
 
 	//Check the network status
-	networkStatus, err := a.system.GetSystemStatus()
+	connectionStatus, err := a.connection.GetConnectionState()
 	if err != nil {
 		return "", err
 	}
 
-	// if the mobile is in 4G or 4G+ change the network in order to make possible run USSD codes
-	//networkChanged := false
-	if networkStatus.Result.NetworkType == response.Net4G || networkStatus.Result.NetworkType == response.Net4GPlus{
-
-		//if the device is connected it must be disconnected to change the network mode
-		connectionStatus, err := a.connection.GetConnectionState()
-		if err != nil {
-			return "", err
-		}
-
-		if connectionStatus.Result.ConnectionStatus == response.Connected {
-			changed, err := a.changeNetwork( request.Automatic )
-			if err != nil {
-				_, err = a.connection.connect()
-				return "", err
-			}
-			if !changed {
-				//try to reconnect
-				return "", errors.New("error changing the network")
-			}
-			a.networkChanged = true
-		}else{
-			_,err := a.connection.connect()
-			if err != nil {
-				return "",err
-			}
-		}
+	if connectionStatus.Result.ConnectionStatus != response.Connected {
+		return "", errors.New("device must be connected" )
 	}
 
 	// Send code to the Network
@@ -72,12 +46,12 @@ func (a *Alcatel) SendUssd(code string) (resp string, err error) {
 		return "", err
 	}
 
-	//defer func() {
-	//	a.connection.setNetworkType( request.Net4G )
-	//	a.connection.connect()
-	//}()
-
 	switch getUssdResponse.Result.SendState {
+	case 1:
+		if getUssdResponse.Result.UssdContentLen == 0 {
+			return "", fmt.Errorf( "An error ocurred, code send State: %d", getUssdResponse.Result.SendState )
+		}
+		fallthrough
 	case 2:
 		return getUssdResponse.Result.UssdContent, nil
 	case 3:
@@ -94,38 +68,5 @@ func (a *Alcatel) CancelUssd() ( cancelled bool, err error ) {
 		return false, err
 	}
 
-	//if the network changed while running ussd code, put it back
-	if a.networkChanged {
-		changed, err := a.changeNetwork( request.Net4G )
-		if err != nil {
-			return false, err
-		}
-		if !changed {
-			return false, errors.New( "error setting back the network, ending ussd request")
-		}
-	}
-
-	return true, nil
-}
-
-func (a *Alcatel) changeNetwork( networkType request.SetNetworkType ) ( changed bool, err error ){
-	disconnected, err := a.connection.disconnect()
-	if err != nil {
-		return false, err
-	}
-	if !disconnected{
-		return false, errors.New("error trying to disconnect from the network")
-	}
-
-	// Set network to Automatic
-	err = a.connection.setNetworkType( networkType )
-	if err != nil {
-		return false, errors.New("unable to change the network mode: " + err.Error() )
-	}
-
-	connected, err := a.connection.connect()
-	if !connected {
-		return true, err
-	}
 	return true, nil
 }
